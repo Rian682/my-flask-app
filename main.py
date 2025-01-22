@@ -113,7 +113,7 @@ def select_movies():
     movie_id = request.args.get("id")
     headers = {
         "accept": "application/json",
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkYzZkYjU1MjY1ODVlOGNjM2ZkYjcwNzY3ZTJlZmFhNyIsIm5iZiI6MTczNjUyODc3Mi40NTEsInN1YiI6IjY3ODE1Mzg0MjE4ZmQ1N2FjZjRlYjViYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.w2K3PAdcxkChxd3bSAe0c8EV7hxariJRaL_-Riwrjw8"
+        "Authorization": auth
     }
     movie_url = f"https://api.themoviedb.org/3/movie/{movie_id}"
 
@@ -121,7 +121,7 @@ def select_movies():
     movie_data = (movie_response.json())
 
     name = movie_data["original_title"]
-    poster_url = f"https://image.tmdb.org/t/p/w500/{movie_data["poster_path"]}"
+    poster_url = f"https://image.tmdb.org/t/p/w500/{movie_data['poster_path']}"
     overview = movie_data["overview"]
     year = movie_data["release_date"].split("-")[0]
 
