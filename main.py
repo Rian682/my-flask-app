@@ -6,7 +6,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
 from sqlalchemy import CheckConstraint
 from wtforms import StringField, SubmitField
-from wtforms.fields.core import FloatField
+from wtforms import FloatField
 import requests
 
 app = Flask(__name__)
