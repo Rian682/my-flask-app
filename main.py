@@ -13,8 +13,8 @@ app = Flask(__name__)
 Bootstrap(app)
 
 #### CREATING SQLite DATABASE
-
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///top_ten_movies.db"
+db_path = os.path.join('/persistent', 'top_ten_movies.db')
+app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{db_path}"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
